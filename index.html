@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .btn {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .btn:hover {
+        background-color: #235f26;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color changing project</h1>
+    <div class="btns">
+      <button class="btn" id="start">Start</button>
+      <button class="btn" id="stop">Stop</button>
+    </div>
+  </body>
+
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("start");
+  const stopBtn = document.getElementById("stop");
+  let interval = null;
+
+  const generateRandomColor = function () {
+    const hex = "123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      const index = Math.floor(Math.random() * 16);
+      color += hex[index];
+    }
+    console.log(color);
+    return color;
+  };
+
+  const startChangeColor = function () {
+    if (!interval) {
+      interval = setInterval(changeBG, 1000);
+    }
+  };
+
+  const stopChangeColor = function () {
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+    }
+  };
+
+  const changeBG = function () {
+    document.body.style.backgroundColor = generateRandomColor();
+  };
+
+  startBtn.addEventListener("click", startChangeColor);
+  stopBtn.addEventListener("click", stopChangeColor);
+});
+
+  </script>
+</html>
