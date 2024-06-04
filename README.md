@@ -1,6 +1,10 @@
+
 # Color Changing Background Web App
 
 ![Color Changing Background](https://socialify.git.ci/dev-rfgul/color-changing/image?language=1&name=1&owner=1&stargazers=1&theme=Auto)
+## Visit Website
+
+[![Visit Website](https://img.shields.io/badge/Visit-Website-blue)](https://change-background785.netlify.app/)
 
 ## Overview
 
@@ -33,6 +37,8 @@ This project is a simple web application that allows users to change the backgro
 ## How It Works
 
 The JavaScript code listens for click events on the "Start" and "Stop" buttons. When the "Start" button is clicked, it triggers a function that changes the background color at regular intervals. When the "Stop" button is clicked, it stops the interval and retains the current background color.
+
+
 
 ## Contributing
 
